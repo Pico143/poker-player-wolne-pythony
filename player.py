@@ -4,6 +4,7 @@ class Player:
     VERSION = "The easily winning poker robot V2"
      
     def betRequest(self, game_state):
+        print game_state
         return 500000
 
     def showdown(self, game_state):
