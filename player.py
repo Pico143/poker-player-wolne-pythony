@@ -1,6 +1,7 @@
 import json
 import traceback
 
+
 class Player:
     VERSION = "The easily winning poker robot V7"
 
@@ -8,8 +9,6 @@ class Player:
         playerIndex = game_state['in_action']
         try:
             if self.checkPairs(game_state):
-                return 99999
-            if self.checkFigures(game_state):
                 return 99999
             return 0
         except:
