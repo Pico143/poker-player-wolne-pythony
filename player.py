@@ -1,6 +1,6 @@
 
 class Player:
-    VERSION = "Default Python folding player"
+    VERSION = "The easily winning poker robot V1"
 
     def betRequest(self, game_state):
         return 500000
