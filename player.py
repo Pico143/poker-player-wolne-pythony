@@ -42,5 +42,12 @@ class Player:
         return False
 
                 
+    def activePlayers(self, game_state):
+        numberOfPlayers = 0
+        for player in game_state['players']:
+            if player['status'] == 'active':
+                numberOfPlayers += 1
+        return numberOfPlayers
+
 
 
