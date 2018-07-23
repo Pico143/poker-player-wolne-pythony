@@ -2,7 +2,7 @@ import json
 import traceback
 
 class Player:
-    VERSION = "The easily winning poker robot V5"
+    VERSION = "The easily winning poker robot V6"
      
     def betRequest(self, game_state):
         try:
