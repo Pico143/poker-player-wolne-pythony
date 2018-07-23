@@ -9,7 +9,7 @@ class Player:
         playerIndex = game_state['in_action']
         activ
         try:
-            if self.checkPairs(game_state) || self.top10Hand(game_state):
+            if self.checkPairs(game_state):
                 return 99999
             return 0
         except:
