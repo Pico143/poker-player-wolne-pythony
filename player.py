@@ -5,12 +5,14 @@ class Player:
     VERSION = "The easily winning poker robot V7"
 
     def betRequest(self, game_state):
-        index = game_state['in_action']
+        playerIndex = game_state['in_action']
         try:
             if self.checkPairs(game_state):
                 return 99999
             if self.checkFigures(game_state):
-                pass
+                buyIn = game_state['current_buy_in'] - game_state['players'][playerIndex]['bet']
+                if buyIn < game_state['players'][playerIndex]['stack']
+                    return buyIn + 11
             return 0
         except:
             traceback.print_exc()
