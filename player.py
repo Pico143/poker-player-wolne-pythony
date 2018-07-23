@@ -4,7 +4,7 @@ class Player:
     VERSION = "The easily winning poker robot V3"
      
     def betRequest(self, game_state):
-        if self.evaluateHand(game_state):
+        if self.evaluateHand(self, game_state):
             return 500000
         else:
             return 0
@@ -17,7 +17,7 @@ class Player:
         for player in playersList:
             if player.name == "Wolne Pythony":
                 print "NAME WAS WOLNE PYTHONY"
-                print player.hole_cards
+                print player.hole_cards[0]
                 if player.hole_cards[0].rank == player.hole_cards[1].rank:
                     print "RANKS WERE THE SAME"
                     return True
