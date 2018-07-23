@@ -36,8 +36,8 @@ class Player:
 
     def top10Hand(self, game_state, playerIndex):
         player = game_state['players'][playerIndex]
-        if (player['hole_cards'][0] in ["A", "K", "Q", "J", "10"]):
-            if (player['hole_cards'][1] in ["A", "K", "Q", "J", "10"]):
+        if str(player['hole_cards'][0]) in ["A", "K", "Q", "J", "10"]:
+            if str(player['hole_cards'][1]) in ["A", "K", "Q", "J", "10"]:
                 return True
         return False
 
