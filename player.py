@@ -10,6 +10,8 @@ class Player:
         try:
             if self.checkPairs(game_state) or self.top10Hand(game_state, playerIndex):
                 return 99999
+            if self.checkFigures(game_state):
+                return game_state['current_buy_in'] - players[playerIndex]['bet']
             return 0
         except:
             traceback.print_exc()
