@@ -17,8 +17,7 @@ class Player:
         for player in playersList:
             if player['name'] == "Wolne Pythony":
                 print "NAME WAS WOLNE PYTHONY"
-                print player.hole_cards[0]
-                if player.hole_cards[0]['rank'] == player.hole_cards[1]['rank']:
+                if player['hole_cards'][0]['rank'] == player['hole_cards'][1]['rank']:
                     print "RANKS WERE THE SAME"
                     return True
                 for card in player.hole_cards:
