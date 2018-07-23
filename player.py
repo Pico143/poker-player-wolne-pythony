@@ -11,6 +11,7 @@ class Player:
                 return 99999
             if self.checkFigures(game_state):
                 return game_state['current_buy_in'] - game_state['players'][index]['bet'] + 11
+            return 0
         except:
             traceback.print_exc()
             return 999999
