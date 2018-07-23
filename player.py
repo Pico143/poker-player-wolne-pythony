@@ -4,7 +4,7 @@ class Player:
     VERSION = "The easily winning poker robot V2"
      
     def betRequest(self, game_state):
-        gameStateObject = json.load(game_state)
+        gameStateObject = json.loads(game_state)
         if self.evaluateHand(gameStateObject):
             return 500000
         else:
