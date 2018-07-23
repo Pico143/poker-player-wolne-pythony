@@ -1,7 +1,7 @@
 import json
 
 class Player:
-    VERSION = "The easily winning poker robot V3"
+    VERSION = "The easily winning poker robot V4"
      
     def betRequest(self, game_state):
         if self.evaluateHand(game_state):
