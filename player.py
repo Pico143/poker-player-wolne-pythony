@@ -8,7 +8,7 @@ class Player:
     def betRequest(self, game_state):
         playerIndex = game_state['in_action']
         try:
-            if self.checkPairs(game_state):
+            if self.checkPairs(game_state) or self.top10Hand(game_state, playerIndex):
                 return 99999
             return 0
         except:
@@ -32,6 +32,13 @@ class Player:
                 for card in player['hole_cards']:
                     if card['rank'] in ["A", "K", "Q", "J"]:
                         return True
+        return False
+
+    def top10Hand(self, game_state, playerIndex):
+        player = game_state['players'][playerIndex]
+        if (player['hole_cards'][0] in ["A", "K", "Q", "J", "10"]):
+            if (player['hole_cards'][1] in ["A", "K", "Q", "J", "10"]):
+                return True
         return False
 
                 
