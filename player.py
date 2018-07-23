@@ -11,8 +11,6 @@ class Player:
                 return 99999
             if self.checkFigures(game_state):
                 buyIn = game_state['current_buy_in'] - game_state['players'][index]['bet'] + 11
-                if buyIn < game_state['players'][index]['stack']
-                    return buyIn
             return 0
         except:
             traceback.print_exc()
