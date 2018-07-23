@@ -22,7 +22,7 @@ class Player:
         playersList = game_state['players']
         for player in playersList:
             if player['name'] == "Wolne Pythony":
-                if player['hole_cards'][0]['rank'] == player['hole_cards'][1]['rank']:
+                if player['hole_cards'][0]['rank'] == player['hole_cards'][1]['rank'] and player['hole_cards'][0]['rank'] not in ["2","3","4","5","6"]:
                     return True
 
     def checkFigures(self, game_state):
