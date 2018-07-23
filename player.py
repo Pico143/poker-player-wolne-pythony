@@ -14,7 +14,6 @@ class Player:
         pass
 
     def evaluateHand(self, gameStateObject):
-        
         playersList = gameStateObject.players
         for player in playersList:
             if player.name == "Wolne Pythony":
