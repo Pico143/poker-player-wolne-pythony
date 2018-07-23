@@ -11,7 +11,7 @@ class Player:
             else:
                 return 0
         except:
-            traceback.print_exc();
+            traceback.print_exc()
             return 500
 
     def showdown(self, game_state):
@@ -27,7 +27,7 @@ class Player:
                 if player['hole_cards'][0]['rank'] == player['hole_cards'][1]['rank']:
                     print "RANKS WERE THE SAME"
                     return True
-                for card in player.hole_cards:
+                for card in player['hole_cards']:
                     if card.rank in ["A","K","Q","J"]:
                         print "WE HAD A FIGURE"
                         return True
