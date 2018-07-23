@@ -11,6 +11,7 @@ class Player:
                 return 99999
             if self.checkFigures(game_state):
                 return 99999
+            return 0
         except:
             traceback.print_exc()
             return 999999
