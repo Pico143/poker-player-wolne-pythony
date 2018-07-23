@@ -7,9 +7,8 @@ class Player:
 
     def betRequest(self, game_state):
         playerIndex = game_state['in_action']
-        activ
         try:
-            if self.checkPairs(game_state):
+            if self.checkPairs(game_state) || self.top10Hand(game_state):
                 return 99999
             return 0
         except:
@@ -34,7 +33,20 @@ class Player:
                     if card['rank'] in ["A", "K", "Q", "J"]:
                         return True
         return False
+    
+    def top10Hand(self, game_state, playerIndex):
+        player = game_state['players'][playerIndex]
+        if (player['hole_cards'][0] in ["A", "K", "Q", "J", "10"]):
+            if (player['hole_cards'][1] in ["A", "K", "Q", "J", "10"]):
+                return True
+        return False
 
+    def activePlayersCount(self, game_state):
+        count = 0
+        for player in game_state['players']:
+            if player['status'] == "active" || player['status'] == "folded":
+                count += 1
+        return count
 
                 
 
