@@ -1,16 +1,18 @@
 import json
 
 class Player:
-    VERSION = "The easily winning poker robot V2"
+    VERSION = "The easily winning poker robot V3"
      
     def betRequest(self, game_state):
-        print game_state
-        return 500000
+        if evaluateHand(self, game_state):
+            return 500000
+        else:
+            return 0
 
     def showdown(self, game_state):
         pass
 
-    def evaluateHand(self, gameStateObject):
+    def evaluateHand(self, game_state):
         playersList = gameStateObject.players
         for player in playersList:
             if player.name == "Wolne Pythony":
