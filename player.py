@@ -10,7 +10,7 @@ class Player:
             if self.checkPairs(game_state):
                 return 99999
             if self.checkFigures(game_state):
-                return 0
+                return 99999
         except:
             traceback.print_exc()
             return 999999
