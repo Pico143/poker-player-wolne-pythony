@@ -3,7 +3,7 @@ import traceback
 
 
 class Player:
-    VERSION = "The easily winning poker robot V7"
+    VERSION = "The easily winning poker robot V8"
 
     def betRequest(self, game_state):
         playerIndex = game_state['in_action']
