@@ -11,8 +11,8 @@ class Player:
             if self.checkHigherPairs(game_state) or self.top10Hand(game_state, playerIndex):
                 return 99999
             if self.checkFigures(game_state) or self.checkLowerPairs(game_state):
-                if int(game_state['current_buy_in']) - int(players[playerIndex]['bet']) <= 300:
-                    return game_state['current_buy_in'] - players[playerIndex]['bet']
+                if int(game_state['current_buy_in']) - int(game_state['players'][playerIndex]['bet']) <= 300:
+                    return int(game_state['current_buy_in']) - int(game_state['players'][playerIndex]['bet'])
             return 0
         except:
             traceback.print_exc()
