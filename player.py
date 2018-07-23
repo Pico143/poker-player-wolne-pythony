@@ -1,12 +1,12 @@
 import json
 
 class Player:
-    VERSION = "The easily winning poker robot V4"
+    VERSION = "The easily winning poker robot V5"
      
     def betRequest(self, game_state):
         try:
             if self.evaluateHand(game_state) is True:
-                return 500000
+                return 500
             else:
                 return 0
         except:
