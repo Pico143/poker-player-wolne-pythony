@@ -28,7 +28,7 @@ class Player:
                     print "RANKS WERE THE SAME"
                     return True
                 for card in player['hole_cards']:
-                    if card.rank in ["A","K","Q","J"]:
+                    if card['rank'] in ["A","K","Q","J"]:
                         print "WE HAD A FIGURE"
                         return True
         return False
