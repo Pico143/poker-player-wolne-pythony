@@ -4,13 +4,16 @@ class Player:
     VERSION = "The easily winning poker robot V4"
      
     def betRequest(self, game_state):
-        return 500000
+        if self.evaluateHand(game_state):
+            return 500000
+        else:
+            return 0
 
     def showdown(self, game_state):
         pass
 
     def evaluateHand(self, game_state):
-        playersList = game_state.players
+        playersList = game_state['players']
         for player in playersList:
             if player.name == "Wolne Pythony":
                 print "NAME WAS WOLNE PYTHONY"
