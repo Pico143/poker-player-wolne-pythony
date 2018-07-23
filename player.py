@@ -8,9 +8,9 @@ class Player:
     def betRequest(self, game_state):
         playerIndex = game_state['in_action']
         try:
-            if self.checkPairs(game_state) or self.top10Hand(game_state, playerIndex):
+            if self.checkHigherPairs(game_state) or self.top10Hand(game_state, playerIndex):
                 return 99999
-            if self.checkFigures(game_state):
+            if self.checkFigures(game_state) or checkLowerPairs(game_state):
                 return game_state['current_buy_in'] - players[playerIndex]['bet']
             return 0
         except:
@@ -20,11 +20,18 @@ class Player:
     def showdown(self, game_state):
         pass
 
-    def checkPairs(self, game_state):
+    def checkHigherPairs(self, game_state):
         playersList = game_state['players']
         for player in playersList:
             if player['name'] == "Wolne Pythony":
                 if player['hole_cards'][0]['rank'] == player['hole_cards'][1]['rank'] and player['hole_cards'][0]['rank'] not in ["2","3","4","5","6"]:
+                    return True
+
+    def checkHigherPairs(self, game_state):
+        playersList = game_state['players']
+        for player in playersList:
+            if player['name'] == "Wolne Pythony":
+                if player['hole_cards'][0]['rank'] == player['hole_cards'][1]['rank'] and player['hole_cards'][0]['rank'] in ["2","3","4","5","6"]:
                     return True
 
     def checkFigures(self, game_state):
