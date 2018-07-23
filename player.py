@@ -5,12 +5,12 @@ class Player:
      
     def betRequest(self, game_state):
         try:
-            if self.evaluateHand(game_state) is True:
-                return 500
+            if self.evaluateHand(game_state):
+                return 50000
             else:
                 return 0
         except:
-            return 50000
+            return 500
 
     def showdown(self, game_state):
         pass
