@@ -5,7 +5,7 @@ class Player:
      
     def betRequest(self, game_state):
         try:
-            if self.evaluateHand(game_state):
+            if self.evaluateHand(game_state) is True:
                 return 500000
             else:
                 return 0
