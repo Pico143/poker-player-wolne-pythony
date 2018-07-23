@@ -1,4 +1,5 @@
 import json
+import traceback
 
 class Player:
     VERSION = "The easily winning poker robot V5"
@@ -10,6 +11,7 @@ class Player:
             else:
                 return 0
         except:
+            traceback.print_exc();
             return 500
 
     def showdown(self, game_state):
