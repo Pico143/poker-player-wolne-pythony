@@ -4,10 +4,7 @@ class Player:
     VERSION = "The easily winning poker robot V3"
      
     def betRequest(self, game_state):
-        if evaluateHand(self, game_state):
-            return 500000
-        else:
-            return 0
+        return 500000
 
     def showdown(self, game_state):
         pass
